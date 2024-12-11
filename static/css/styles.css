@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #0a0a0a;
+    background-color: #0a0a0a; /* Fond sombre pour mettre en valeur le vert */
     color: #ffffff;
     line-height: 1.6;
     overflow-x: hidden;
@@ -29,7 +29,7 @@ nav {
 nav h1 {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5em;
-    color: #ffaa00;
+    color: #3ab66b; /* Vert du logo */
 }
 
 nav ul {
@@ -43,106 +43,14 @@ nav ul li {
 
 nav ul li a {
     font-size: 16px;
-    color: #ffaa00;
+    color: #3ab66b;
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
 }
 
 nav ul li a:hover {
-    color: #ffffff;
-}
-
-.connect-wallet-btn {
-    background-color: transparent;
-    color: #ffaa00;
-    border: 1px solid #ffaa00;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.9em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.connect-wallet-btn:hover {
-    background-color: #ffaa00;
-    color: #0a0a0a;
-}
-
-#wallet-section {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-#walletAddress {
-    color: #ffaa00;
-    font-weight: bold;
-}
-
-/* Wallet Display */
-.wallet-display {
-    display: flex;
-    align-items: center;
-    background-color: #1a1a1a;
-    padding: 8px 15px;
-    border-radius: 8px;
-    border: 1px solid #ffaa00;
-    color: #ffffff;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.9em;
-    margin-left: auto;
-}
-
-.wallet-icon {
-    color: #ffaa00;
-    margin-right: 10px;
-    font-size: 1.2em;
-}
-
-#walletAddress {
-    color: #ffaa00;
-    font-weight: bold;
-}
-
-
-#walletDisplay {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-#walletAddress {
-    font-size: 0.9em;
-    color: #ffaa00;
-    font-family: 'Roboto', sans-serif;
-    padding: 5px 10px;
-    background: #1a1a1a;
-    border: 1px solid #ffaa00;
-    border-radius: 5px;
-}
-
-.connect-wallet-btn {
-    background-color: transparent;
-    color: #ffaa00;
-    border: 1px solid #ffaa00;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.9em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.connect-wallet-btn:hover {
-    background-color: #ffaa00;
-    color: #0a0a0a;
-}
-
-.fa-wallet {
-    color: #ffaa00;
-    font-size: 1.2em;
+    color: #cccccc;
 }
 
 /* HERO */
@@ -177,7 +85,7 @@ nav ul li a:hover {
 .hero h1 {
     font-family: 'Orbitron', sans-serif;
     font-size: 4em;
-    color: #ffaa00;
+    color: #3ab66b;
     margin-bottom: 20px;
 }
 
@@ -185,10 +93,11 @@ nav ul li a:hover {
     font-size: 1.5em;
     max-width: 800px;
     margin: 0 auto 30px;
+    color: #cccccc;
 }
 
 .cta {
-    background-color: #ffaa00;
+    background-color: #3ab66b;
     color: #0a0a0a;
     padding: 15px 30px;
     border-radius: 5px;
@@ -200,8 +109,83 @@ nav ul li a:hover {
 
 .cta:hover {
     background-color: #ffffff;
-    color: #ffaa00;
+    color: #3ab66b;
 }
+
+/* PROJECT STRUCTURE */
+#project-structure {
+    background-color: #1a1a1a; /* Fond sombre */
+    padding: 80px 20px;
+    text-align: center;
+    margin: 50px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+#project-structure h2 {
+    font-size: 2.5em;
+    color: #3ab66b; /* Vert vif pour les titres */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+#project-structure p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 20px auto;
+    color: #dddddd; /* Texte légèrement argenté */
+    line-height: 1.6;
+}
+
+#project-structure ul {
+    list-style-type: none; /* Supprime les puces */
+    padding: 0;
+    margin: 30px auto;
+    max-width: 800px;
+}
+
+#project-structure ul li {
+    font-size: 1.1em;
+    color: #ffffff;
+    background-color: #0d0d0d;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left; /* Aligne le texte à gauche */
+    line-height: 1.6;
+}
+
+#project-structure ul li strong {
+    color: #3ab66b; /* Met en valeur les titres */
+}
+
+#project-structure ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+#project-structure ul li:nth-child(odd) {
+    background-color: #242424; /* Couleur légèrement différente pour alterner */
+}
+
+@media (max-width: 768px) {
+    #project-structure h2 {
+        font-size: 2em;
+    }
+
+    #project-structure p {
+        font-size: 1em;
+    }
+
+    #project-structure ul li {
+        font-size: 1em;
+        padding: 15px;
+    }
+}
+
 
 /* SECTIONS */
 section {
@@ -211,7 +195,7 @@ section {
 
 section h2 {
     font-size: 2.5em;
-    color: #ffaa00;
+    color: #3ab66b;
     margin-bottom: 20px;
     text-transform: uppercase;
 }
@@ -243,11 +227,11 @@ section p {
 
 .feature:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(255, 170, 0, 0.4);
+    box-shadow: 0 10px 20px rgba(58, 182, 107, 0.4);
 }
 
 .feature h3 {
-    color: #ffaa00;
+    color: #3ab66b;
     margin-bottom: 10px;
     font-size: 1.5em;
 }
@@ -257,49 +241,263 @@ section p {
     color: #ffffff;
 }
 
-/* SECTION ACHETER */
-#buy {
-    background-color: #0d0d0d;
-    padding: 80px 20px;
+/* PRESALE SECTION (Final - Élégant et Centré) */
+#presale {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    padding: 100px 20px;
+    margin: 50px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
-    margin: 50px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-#buy h2 {
-    font-size: 2.5em;
-    color: #ffaa00;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-#buy p {
-    font-size: 1.2em;
     max-width: 800px;
-    margin: 20px auto 40px;
-    color: #dddddd;
 }
 
-.buy-button {
-    display: inline-block;
-    background-color: #ffaa00;
-    color: #0a0a0a;
-    padding: 15px 30px;
-    border-radius: 5px;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-decoration: none;
+/* Presale Title */
+#presale h2 {
+    font-size: 3em;
+    color: #3ab66b;
+    margin-bottom: 25px;
     text-transform: uppercase;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(255, 170, 0, 0.3);
+    letter-spacing: 1px;
+    font-weight: bold;
 }
 
-.buy-button:hover {
-    background-color: #ffffff;
-    color: #ffaa00;
-    transform: translateY(-5px);
+/* Presale Subtitle */
+#presale p {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: #dddddd;
+    line-height: 1.8;
+    font-weight: 300;
 }
+
+.add-token-container {
+    margin-top: 0px;
+    text-align: center;
+}
+
+.add-token-btn {
+    background-color: #3ab66b;
+    color: #0a0a0a;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-token-btn:hover {
+    background-color: #ffffff;
+    color: #3ab66b;
+    transform: scale(1.05);
+}
+
+
+/* Token Counter */
+.token-counter {
+    font-size: 1.5em;
+    color: #3ab66b;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.token-counter div {
+    font-size: 2.2em;
+    color: #56d88f;
+    font-weight: bold;
+}
+
+/* Countdown Timer */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.countdown-box {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    width: 100px;
+    text-align: center;
+    border: 1px solid #3ab66b;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.countdown-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.countdown-box span {
+    display: block;
+    font-size: 2.2em;
+    color: #3ab66b;
+    font-weight: bold;
+}
+
+.countdown-box p {
+    margin-top: 5px;
+    font-size: 1em;
+    color: #cccccc;
+    font-weight: 300;
+}
+
+/* Presale Container */
+.presale-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 700px;
+}
+
+/* Wallet Section */
+.wallet-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.presale-wallet-btn {
+    background-color: transparent;
+    color: #3ab66b;
+    border: 2px solid #3ab66b;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.presale-wallet-btn i {
+    font-size: 1.5em;
+    color: #3ab66b;
+}
+
+.presale-wallet-btn:hover {
+    background-color: #3ab66b;
+    color: #0a0a0a;
+    transform: scale(1.05);
+}
+
+.wallet-dropdown {
+    display: none;
+    background-color: #1a1a1a;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #3ab66b;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 250px;
+    text-align: left;
+}
+
+/* Buy Tokens Section */
+.buy-presale-container {
+    background: #1a1a1a;
+    padding: 30px 40px;
+    border-radius: 12px;
+    border: 1px solid #3ab66b;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.buy-presale-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.buy-presale-container h3 {
+    font-size: 2em;
+    color: #3ab66b;
+    margin-bottom: 20px;
+}
+
+.buy-presale-container p {
+    margin-bottom: 20px;
+    font-size: 1em;
+    color: #cccccc;
+}
+
+.token-estimation {
+    font-size: 1.2em;
+    color: #56d88f;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.buy-presale-container input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #3ab66b;
+    border-radius: 8px;
+    background: #0a0a0a;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.buy-presale-container input:focus {
+    border-color: #56d88f;
+    outline: none;
+}
+
+.presale-buy-btn {
+    background-color: #3ab66b;
+    color: #0a0a0a;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: 100%;
+}
+
+.presale-buy-btn:hover {
+    background-color: #ffffff;
+    color: #3ab66b;
+    transform: scale(1.05);
+}
+
+#infoMessage {
+    font-size: 1em;
+    margin-top: 15px;
+    color: #cccccc;
+    text-align: center;
+    min-height: 20px;
+}
+
+
 /* ROADMAP */
 #roadmap {
     background-color: #1a1a1a;
@@ -319,7 +517,7 @@ section p {
     content: '';
     position: absolute;
     width: 4px;
-    background-color: #ffaa00;
+    background-color: #3ab66b;
     top: 0;
     bottom: 0;
     left: 50%;
@@ -346,7 +544,7 @@ section p {
     width: 20px;
     height: 20px;
     right: -10px;
-    background-color: #ffaa00;
+    background-color: #3ab66b;
     border: 4px solid #ffffff;
     top: 20px;
     border-radius: 50%;
@@ -366,7 +564,7 @@ section p {
 }
 
 .timeline-content h3 {
-    color: #ffaa00;
+    color: #3ab66b;
     margin-bottom: 10px;
     font-size: 1.8em;
 }
@@ -397,50 +595,117 @@ section p {
         margin: 0;
     }
 }
-/* CONTACT FORM */
-#contact form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #242424;
-    padding: 30px;
+/* FAQ */
+/* FAQ SECTION */
+#faq {
+    background-color: #1a1a1a;
+    padding: 80px 20px;
+    text-align: center;
+    margin-top: 50px;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-#contact form label {
-    display: block;
-    margin-bottom: 10px;
-    color: #ffaa00;
-    font-weight: bold;
+#faq h2 {
+    font-size: 2.5em;
+    color: #3ab66b;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+#faq p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 20px auto;
+    color: #dddddd;
+    line-height: 1.6;
+}
+
+.faq-container {
+    margin-top: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: left;
 }
 
-#contact form input,
-#contact form textarea {
-    width: 100%;
-    padding: 10px;
+.faq-item {
     margin-bottom: 20px;
-    border: none;
-    border-radius: 5px;
-    background: #1a1a1a;
+    background-color: #242424;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.faq-question {
+    background-color: transparent;
     color: #ffffff;
-}
-
-#contact form button {
-    background: #ffaa00;
-    color: #0a0a0a;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
+    padding: 20px;
+    font-size: 1.1em;
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: none;
     cursor: pointer;
+    text-align: left;
+    transition: color 0.3s ease;
 }
 
-#contact form button:hover {
-    background: #ffffff;
-    color: #ffaa00;
+.faq-question:hover {
+    color: #3ab66b;
 }
+
+.faq-question i {
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    display: none;
+    background-color: #1a1a1a;
+    color: #dddddd;
+    padding: 15px 20px;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.faq-answer p {
+    margin: 0;
+}
+
+.faq-item.open .faq-answer {
+    display: block;
+}
+
+.faq-item.open .faq-question i {
+    transform: rotate(180deg);
+}
+
+/* RESPONSIVE FAQ */
+@media (max-width: 768px) {
+    #faq h2 {
+        font-size: 2em;
+    }
+
+    #faq p {
+        font-size: 1.1em;
+    }
+
+    .faq-question {
+        font-size: 1em;
+    }
+
+    .faq-answer {
+        font-size: 0.95em;
+    }
+}
+
 
 /* FOOTER */
 footer {
@@ -451,7 +716,7 @@ footer {
 }
 
 footer a {
-    color: #ffaa00;
+    color: #3ab66b;
     text-decoration: none;
 }
 

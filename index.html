@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carify - The Blockchain Revolution in the Automotive Industry</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="static/img/favicon.ico">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
@@ -14,34 +15,43 @@
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="static/css/styles.css">
 </head>
-
 <body>
     <!-- NAVIGATION -->
     <nav>
         <h1>Carify</h1>
         <ul>
+            <li><a href="#project-structure">Project</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#features">Features</a></li>
-            <li><a href="#buy">Buy</a></li>
+            <li><a href="#presale">Presale</a></li>
             <li><a href="#roadmap">Roadmap</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#faq">F.A.Q</a></li>
         </ul>
-        <div id="walletDisplay" style="display: none; align-items: center; gap: 10px;">
-            <i class="fa fa-wallet"></i>
-            <span id="walletAddress"></span>
-        </div>
-        <button id="connectWalletBtn" class="connect-wallet-btn">Connect Wallet</button>
     </nav>
     
 
     <!-- HERO -->
     <div class="hero" id="home">
         <div>
-            <h1>Carify</h1>
-            <p>The BSC blockchain serving the automotive industry for a safer, more transparent, and decentralized future.</p>
-            <a href="#about" class="cta">Learn More</a>
+            <h1>Revolutionize the Automotive Industry</h1>
+            <p>Carify leverages Blockchain and NFTs to bring transparency, security, and innovation to vehicle ownership and management. Join us in creating a fairer and more advanced ecosystem.</p>
+            <a href="#presale" class="cta">Join Presale Now</a>
         </div>
     </div>
+
+    <section id="project-structure">
+        <h2>Project Structure</h2>
+        <p>Carify is transforming the automotive industry by leveraging the power of BSC blockchain and NFTs. Discover how we address major challenges with innovative technological solutions.</p>
+        <ul>
+            <li><strong>Mileage Fraud:</strong> Approximately 20% of used vehicles in Europe have tampered mileage, causing an estimated loss of <strong>€6 billion.</strong></li>
+            <li><strong>Document Fraud:</strong> Falsified documents reduce trust in transactions. NFTs ensure data authenticity and reliability.</li>
+            <li><strong>Advantages of NFTs:</strong> Each vehicle will be linked to a unique NFT that contains its full history, including mileage, repairs, ownership changes, and even incidents. This ensures transparency and protects against fraud.</li>
+            <li><strong>BSC Blockchain:</strong> Real-time traceability makes tampering impossible, reinforcing user confidence and creating a safer marketplace.</li>
+            <li><strong>Vehicle History:</strong> The integration of NFTs provides a transparent and immutable record of every vehicle's life cycle. Buyers and sellers can access this history, ensuring they make informed decisions while significantly reducing fraud in the automotive sector.</li>
+        </ul>
+    </section>
+    
+    
 
     <!-- ABOUT -->
     <section id="about">
@@ -80,14 +90,74 @@
         </div>
     </section>
 
-    <!-- BUY SECTION -->
-    <section id="buy">
-        <h2>Buy Carify Token</h2>
-        <p>Join our revolution and easily obtain your Carify tokens via PancakeSwap.</p>
-        <div class="buy-container">
-            <a href="https://pancakeswap.finance/swap?outputCurrency=0xF7C78ae754889471ca51BC8CC67Ee50C01c49C89" target="_blank" class="buy-button">Buy on PancakeSwap</a>
+    <section id="presale">
+        <h2>Token Presale</h2>
+        <p>Secure your Carify tokens today before the public launch and join the blockchain revolution.</p>
+    
+        <!-- Countdown Timer -->
+        <div class="countdown-container">
+            <div class="countdown-box">
+                <span id="days">00</span>
+                <p>Days</p>
+            </div>
+            <div class="countdown-box">
+                <span id="hours">00</span>
+                <p>Hours</p>
+            </div>
+            <div class="countdown-box">
+                <span id="minutes">00</span>
+                <p>Minutes</p>
+            </div>
+            <div class="countdown-box">
+                <span id="seconds">00</span>
+                <p>Seconds</p>
+            </div>
         </div>
-    </section ```html
+
+        <div class="add-token-container">
+            <button id="addTokenButton" class="add-token-btn">
+                Add $CARI to Wallet
+            </button>
+        </div>
+    
+        <!-- Compteur de tokens -->
+    <div class="token-counter">
+        <p><strong>Tokens Sold:</strong></p>
+        <div>
+            <span id="soldTokens">0</span> / 3,750,000,000
+        </div>
+    </div>
+
+    <!-- Wallet Section -->
+    <div class="wallet-section">
+        <button id="walletButton" class="presale-wallet-btn">
+            <img src="static/img/wlt.png" style="width: 20px; height: 20px;"> Connect Wallet
+        </button>
+        <div id="walletDropdown" class="wallet-dropdown">
+            <p>Connected as: <span id="walletAddress">Not connected</span></p>
+            <button id="disconnectWalletBtn">Disconnect Wallet</button>
+        </div>
+    </div>
+
+    <!-- Buying Tokens -->
+    <div class="buy-presale-container">
+        <p>Enter the amount of BNB you wish to invest:</p>
+        <input type="number" id="bnbInput" placeholder="Enter BNB amount" step="0.01" min="0">
+        <p>You will receive approximately <span id="calculatedTokens">0.00</span> $CARI.</p>
+        <button id="buyButton" class="presale-buy-btn">Buy Now</button>
+        <p id="infoMessage" style="margin-top:10px;"></p>
+    </div>
+
+    
+    
+</section>
+    
+
+
+<!-- Font Awesome Import (if not already included in the <head>) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+
+
     <!-- ROADMAP -->
     <section id="roadmap">
         <h2>Our Roadmap</h2>
@@ -126,6 +196,50 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <p>Find answers to common questions about Carify and our future blockchain solutions.</p>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How will NFTs be used in Carify?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>In the future, each vehicle will be linked to a unique NFT containing its full history, such as mileage, repairs, and ownership changes. This will ensure transparency and security in transactions.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Why is the BSC blockchain the right choice?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>The BSC blockchain offers low fees, scalability, and fast transactions. These features make it ideal for managing vehicle-related data and ensuring the reliability of the system we plan to implement.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Will Carify NFTs enable vehicle sales?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, in the future. Once implemented, Carify NFTs will allow users to transfer vehicle ownership securely and seamlessly by selling the corresponding NFT.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>When will these features be available?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Carify is currently in its presale phase. The development of NFTs and other features is planned as part of our roadmap and will be introduced in upcoming project phases.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
@@ -137,69 +251,331 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous"></script>
     <script>
+        document.getElementById("addTokenButton").addEventListener("click", async () => {
+    try {
+        const tokenAddress = "0xF7C78ae754889471ca51BC8CC67Ee50C01c49C89"; // Adresse du contrat
+        const tokenSymbol = "CARI"; // Symbole du token
+        const tokenDecimals = 18; // Décimales du token
+        const tokenImage = "static/img/lg.png"; // Image du token (URL vers une icône)
+
+        // Demander à MetaMask d'ajouter le token
+        const wasAdded = await ethereum.request({
+            method: "wallet_watchAsset",
+            params: {
+                type: "ERC20",
+                options: {
+                    address: tokenAddress,
+                    symbol: tokenSymbol,
+                    decimals: tokenDecimals,
+                    image: tokenImage,
+                },
+            },
+        });
+
+        if (wasAdded) {
+            alert("$CARI successfully added to your wallet!");
+        } else {
+            alert("Token addition cancelled by user.");
+        }
+    } catch (error) {
+        console.error("Error adding token to wallet:", error);
+        alert("An error occurred. Please try again.");
+    }
+});
+
+    </script>
+    <script>
+        const totalTokens = 3750000000; // Total tokens disponibles
+        let soldTokens = 0; // Initialisation à 0
+    
+        // Fonction pour mettre à jour le compteur
+        function updateTokenCounter(amountSold) {
+            soldTokens += amountSold;
+            const soldTokensElement = document.getElementById('soldTokens');
+            soldTokensElement.textContent = soldTokens.toLocaleString(); // Formatage avec des milliers
+        }
+    
+        // Simule une vente pour tester
+        document.getElementById('buyButton').addEventListener('click', () => {
+            const bnbAmount = parseFloat(document.getElementById('bnbInput').value) || 0;
+            const tokenAmount = bnbAmount / 0.000005; // Calcul basé sur le prix par token
+            updateTokenCounter(Math.floor(tokenAmount));
+            document.getElementById('infoMessage').textContent = `Thank you! You purchased ${Math.floor(tokenAmount)} tokens.`;
+        });
+    </script>
+    
+    <script>
         AOS.init({
             duration: 1000,
             once: true,
         });
     </script>
-    
+    <!-- Web3.js -->
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
     <script>
-        async function connectWallet() {
-            if (typeof window.ethereum !== "undefined") {
-                try {
-                    // Request wallet connection
-                    const accounts = await ethereum.request({ method: "eth_requestAccounts" });
-                    const walletAddress = accounts[0];
-                    const formattedAddress = `${walletAddress.slice(0, 4)}...${walletAddress.slice(-6)}`;
+        // Code previously in index.js, now inline
 
-                    // Display wallet address
-                    document.getElementById("walletAddress").textContent = formattedAddress;
-                    document.getElementById("walletDisplay").style.display = "flex";
-                    document.getElementById("connectWalletBtn").style.display = "none";
+        // Initialisation des variables globales
+        let web3;
+        let userAddress = null;
 
-                    // Prompt to add the token
-                    addTokenToWallet();
-                } catch (error) {
-                    alert("Error connecting: " + error.message);
-                }
-            } else {
-                alert("MetaMask not detected. Please install the MetaMask extension.");
+        // Adresse et ABI du contrat intelligent
+        const contractAddress = "0xF7C78ae754889471ca51BC8CC67Ee50C01c49C89";
+        const contractABI = [
+            {
+                "inputs": [{ "internalType": "uint256", "name": "_amount", "type": "uint256" }],
+                "name": "buyTokens",
+                "outputs": [],
+                "stateMutability": "payable",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "pricePerToken",
+                "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "totalSupply",
+                "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "decimals",
+                "outputs": [{ "internalType": "uint8", "name": "", "type": "uint8" }],
+                "stateMutability": "view",
+                "type": "function"
             }
-        }
+        ];
 
-        async function addTokenToWallet() {
-            const tokenAddress = '0xF7C78ae754889471ca51BC8CC67Ee50C01c49C89'; // Replace with your token contract address
-            const tokenSymbol = 'CARI'; // Replace with your token symbol
-            const tokenDecimals = 18; // Replace with your token decimals
-            const tokenImage = ''; // Optional: Provide a URL for the token's image
+        // Références DOM
+        const walletButton = document.getElementById("walletButton");
+        const walletDropdown = document.getElementById("walletDropdown");
+        const walletAddress = document.getElementById("walletAddress");
+        const disconnectWalletBtn = document.getElementById("disconnectWalletBtn");
+        const bnbInput = document.getElementById("bnbInput");
+        const buyButton = document.getElementById("buyButton");
+        const calculatedTokens = document.getElementById("calculatedTokens");
+        const infoMessage = document.getElementById("infoMessage");
+
+        // Prix par token (sera récupéré dynamiquement)
+        let tokenPrice;
+
+        // Initialisation du contrat intelligent
+        let tokenContract;
+
+        // Fonction pour connecter le portefeuille via MetaMask
+        async function connectWallet() {
+            if (typeof window.ethereum === "undefined") {
+                alert("MetaMask n'est pas installé. Veuillez installer l'extension.");
+                return;
+            }
 
             try {
-                const wasAdded = await ethereum.request({
-                    method: 'wallet_watchAsset',
-                    params: {
-                        type: 'ERC20',
-                        options: {
-                            address: tokenAddress,
-                            symbol: tokenSymbol,
-                            decimals: tokenDecimals,
-                            image: tokenImage,
-                        },
-                    },
-                });
-
-                if (wasAdded) {
-                    alert(`${tokenSymbol} has been successfully added to your MetaMask.`);
-                } else {
-                    alert(`User  denied adding ${tokenSymbol} to MetaMask.`);
+                const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+                if (accounts.length === 0) {
+                    alert("Aucun compte MetaMask trouvé.");
+                    return;
                 }
+
+                web3 = new Web3(window.ethereum);
+                userAddress = accounts[0];
+                tokenContract = new web3.eth.Contract(contractABI, contractAddress);
+                updateWalletDisplay(userAddress);
+
+                // Sauvegarder l'adresse dans localStorage
+                localStorage.setItem("connectedAddress", userAddress);
+                console.log(`Adresse connectée sauvegardée : ${userAddress}`);
+
+                await fetchTokenPrice();
             } catch (error) {
-                console.error("Error adding token to MetaMask: ", error.message);
+                console.error("Erreur lors de la connexion :", error);
+                alert("Une erreur est survenue lors de la connexion au portefeuille.");
             }
         }
 
-        // Add event listener
-        document.getElementById("connectWalletBtn").addEventListener("click", connectWallet);
+        // Fonction pour récupérer le prix des jetons depuis le contrat
+        async function fetchTokenPrice() {
+            try {
+                const priceInWei = await tokenContract.methods.pricePerToken().call();
+                tokenPrice = web3.utils.fromWei(priceInWei, "ether");
+                console.log(`Prix par token : ${tokenPrice} BNB`);
+            } catch (error) {
+                console.error("Erreur lors de la récupération du prix par token :", error);
+                alert("Impossible de récupérer le prix des jetons.");
+            }
+        }
+
+        // Fonction pour mettre à jour l'affichage du bouton de connexion
+        function updateWalletDisplay(address) {
+            if (address) {
+                walletButton.innerHTML = `<img src="/static/img/wlt.png" style="width: 20px; height: 20px;"> ${address.slice(0, 6)}...${address.slice(-4)}`;
+                walletDropdown.classList.add("show");
+                walletAddress.textContent = `${address.slice(0, 6)}...${address.slice(-4)}`;
+            } else {
+                walletButton.innerHTML = `<img src="static/img/wlt.png" style="width: 20px; height: 20px;"> Connect Wallet`;
+                walletDropdown.classList.remove("show");
+                walletAddress.textContent = "Non connecté";
+            }
+        }
+
+        // Fonction pour simuler une déconnexion locale
+        async function disconnectWallet() {
+            try {
+                userAddress = null;
+                localStorage.removeItem("connectedAddress");
+                updateWalletDisplay(null);
+                console.log("Déconnecté localement avec succès.");
+            } catch (error) {
+                console.error("Erreur lors de la tentative de déconnexion :", error);
+            }
+        }
+
+        // Fonction pour vérifier si un portefeuille est connecté au chargement de la page
+        async function initializeWalletState() {
+            const savedAccount = localStorage.getItem("connectedAddress");
+            if (savedAccount) {
+                try {
+                    web3 = new Web3(window.ethereum);
+                    userAddress = savedAccount;
+                    tokenContract = new web3.eth.Contract(contractABI, contractAddress);
+                    updateWalletDisplay(userAddress);
+                    await fetchTokenPrice();
+                } catch (error) {
+                    console.error("Erreur lors de l'initialisation du portefeuille :", error);
+                }
+            } else {
+                updateWalletDisplay(null);
+            }
+        }
+
+        // Gestion des changements de compte dans MetaMask
+        window.ethereum?.on("accountsChanged", (accounts) => {
+            if (accounts.length > 0) {
+                console.log("Compte changé :", accounts[0]);
+                userAddress = accounts[0];
+                localStorage.setItem("connectedAddress", accounts[0]);
+                updateWalletDisplay(userAddress);
+            } else {
+                console.log("Aucun compte détecté. Déconnexion locale.");
+                disconnectWallet();
+            }
+        });
+
+        // Gestion des clics sur le bouton "Connecter Wallet"
+        walletButton.addEventListener("click", async () => {
+            if (!userAddress) {
+                await connectWallet();
+            } else {
+                walletDropdown.classList.toggle("show");
+            }
+        });
+
+        // Gestion des clics sur le bouton "Déconnecter Wallet"
+        disconnectWalletBtn.addEventListener("click", async () => {
+            await disconnectWallet();
+        });
+
+        // Calcul des tokens en temps réel lors de la saisie de BNB
+        bnbInput.addEventListener("input", () => {
+            const bnbAmount = parseFloat(bnbInput.value) || 0;
+            const tokenAmount = bnbAmount / tokenPrice;
+            calculatedTokens.textContent = tokenAmount.toFixed(2);
+        });
+
+        // Fonction pour acheter des tokens
+        async function buyTokens() {
+            if (!userAddress) {
+                alert("Veuillez connecter votre portefeuille avant de procéder.");
+                return;
+            }
+
+            const bnbAmount = parseFloat(bnbInput.value);
+            if (isNaN(bnbAmount) || bnbAmount <= 0) {
+                alert("Veuillez entrer un montant valide en BNB.");
+                return;
+            }
+
+            let valueInWei;
+            try {
+                valueInWei = web3.utils.toWei(bnbAmount.toFixed(18).toString(), "ether");
+            } catch (error) {
+                console.error("Erreur lors de la conversion en Wei :", error);
+                alert("Montant invalide. Veuillez saisir un montant valide.");
+                return;
+            }
+
+            const tokenAmount = Math.floor(bnbAmount / tokenPrice);
+
+            try {
+                infoMessage.textContent = "Transaction en cours...";
+                infoMessage.style.color = "green";
+
+                await tokenContract.methods.buyTokens(tokenAmount).send({
+                    from: userAddress,
+                    value: valueInWei,
+                });
+
+                infoMessage.textContent = `Achat réussi ! Vous avez acheté ${tokenAmount} tokens.`;
+                infoMessage.style.color = "green";
+
+                bnbInput.value = "";
+                calculatedTokens.textContent = "0.00";
+            } catch (error) {
+                console.error("Erreur lors de l'achat :", error);
+                infoMessage.textContent = "Erreur lors de l'achat. Veuillez réessayer.";
+                infoMessage.style.color = "red";
+            }
+        }
+
+        // Gestion des clics sur le bouton d'achat
+        buyButton.addEventListener("click", async () => {
+            await buyTokens();
+        });
+
+        // Initialiser l'état du portefeuille lors du chargement de la page
+        initializeWalletState();
+    </script>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('open');
+            });
+        });
+    </script>
+    
+    <script>
+        // Countdown Timer
+const presaleEndDate = new Date("2025-01-31T23:59:59").getTime();
+
+function updateCountdown() {
+    const now = new Date().getTime();
+    const timeLeft = presaleEndDate - now;
+
+    if (timeLeft > 0) {
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = days.toString().padStart(2, "0");
+        document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+        document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+        document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+    } else {
+        clearInterval(countdownTimer);
+        document.querySelector(".countdown-container").textContent = "Presale has ended!";
+    }
+}
+
+const countdownTimer = setInterval(updateCountdown, 1000);
+updateCountdown();
+
     </script>
 </body>
-
 </html>
