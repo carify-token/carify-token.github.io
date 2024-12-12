@@ -738,3 +738,45 @@ footer a {
         width: 100%;
     }
 }
+
+/* SOCIAL BUTTONS */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Taille uniforme pour tous les boutons */
+    height: 40px; /* Taille uniforme pour tous les boutons */
+    background-color: #1a1a1a;
+    border-radius: 50%;
+    border: 2px solid #3ab66b; /* Contour vert */
+    color: #3ab66b; /* Couleur des icônes en vert */
+    font-size: 1em; /* Taille des icônes (font-awesome) */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.social-btn:hover {
+    background-color: #3ab66b; /* Fond vert au survol */
+    color: #0a0a0a; /* Couleur des icônes en noir */
+    transform: scale(1.1); /* Légère animation au survol */
+}
+
+.social-btn i {
+    pointer-events: none; /* Empêche les clics sur l'icône */
+}
+
+/* Icônes personnalisées pour CoinMarketCap et BscScan */
+.social-btn img.custom-icon {
+    width: 20px; /* Taille uniforme des icônes personnalisées */
+    height: 20px; /* Taille uniforme des icônes personnalisées */
+    object-fit: contain; /* S'adapte sans déformation */
+    pointer-events: none; /* Empêche les clics sur l'image */
+}
