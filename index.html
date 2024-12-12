@@ -352,7 +352,7 @@ document.getElementById('buyButton').addEventListener('click', async () => {
             document.getElementById("soldTokens").textContent = "Error fetching data";
         }
     } catch (error) {
-        console.error("Erreur lors de la récupération des données :", error);
+        console.error("Error retrieving data :", error);
         document.getElementById("soldTokens").textContent = "Error";
     }
 }
@@ -429,14 +429,14 @@ fetchTokenData();
         // Fonction pour connecter le portefeuille via MetaMask
         async function connectWallet() {
             if (typeof window.ethereum === "undefined") {
-                alert("MetaMask n'est pas installé. Veuillez installer l'extension.");
+                alert("MetaMask is not installed. Please install the extension.");
                 return;
             }
 
             try {
                 const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
                 if (accounts.length === 0) {
-                    alert("Aucun compte MetaMask trouvé.");
+                    alert("No MetaMask accounts found.");
                     return;
                 }
 
@@ -447,24 +447,12 @@ fetchTokenData();
 
                 // Sauvegarder l'adresse dans localStorage
                 localStorage.setItem("connectedAddress", userAddress);
-                console.log(`Adresse connectée sauvegardée : ${userAddress}`);
+                console.log(`Saved connected address : ${userAddress}`);
 
                 await fetchTokenPrice();
             } catch (error) {
-                console.error("Erreur lors de la connexion :", error);
+                console.error("Error connecting :", error);
                 alert("Une erreur est survenue lors de la connexion au portefeuille.");
-            }
-        }
-
-        // Fonction pour récupérer le prix des jetons depuis le contrat
-        async function fetchTokenPrice() {
-            try {
-                const priceInWei = await tokenContract.methods.pricePerToken().call();
-                tokenPrice = web3.utils.fromWei(priceInWei, "ether");
-                console.log(`Prix par token : ${tokenPrice} BNB`);
-            } catch (error) {
-                console.error("Erreur lors de la récupération du prix par token :", error);
-                alert("Impossible de récupérer le prix des jetons.");
             }
         }
 
@@ -477,7 +465,7 @@ fetchTokenData();
             } else {
                 walletButton.innerHTML = `<img src="static/img/wlt.png" style="width: 20px; height: 20px;"> Connect Wallet`;
                 walletDropdown.classList.remove("show");
-                walletAddress.textContent = "Non connecté";
+                walletAddress.textContent = "Not connected";
             }
         }
 
@@ -487,9 +475,8 @@ fetchTokenData();
                 userAddress = null;
                 localStorage.removeItem("connectedAddress");
                 updateWalletDisplay(null);
-                console.log("Déconnecté localement avec succès.");
             } catch (error) {
-                console.error("Erreur lors de la tentative de déconnexion :", error);
+                console.error("Error trying to log out :", error);
             }
         }
 
@@ -504,7 +491,7 @@ fetchTokenData();
                     updateWalletDisplay(userAddress);
                     await fetchTokenPrice();
                 } catch (error) {
-                    console.error("Erreur lors de l'initialisation du portefeuille :", error);
+                    console.error("Error initializing wallet :", error);
                 }
             } else {
                 updateWalletDisplay(null);
@@ -548,13 +535,13 @@ fetchTokenData();
         // Fonction pour acheter des tokens
         async function buyTokens() {
             if (!userAddress) {
-                alert("Veuillez connecter votre portefeuille avant de procéder.");
+                alert("Please connect your wallet before proceeding.");
                 return;
             }
 
             const bnbAmount = parseFloat(bnbInput.value);
             if (isNaN(bnbAmount) || bnbAmount <= 0) {
-                alert("Veuillez entrer un montant valide en BNB.");
+                alert("Please enter a valid BNB amount.");
                 return;
             }
 
@@ -562,15 +549,15 @@ fetchTokenData();
             try {
                 valueInWei = web3.utils.toWei(bnbAmount.toFixed(18).toString(), "ether");
             } catch (error) {
-                console.error("Erreur lors de la conversion en Wei :", error);
-                alert("Montant invalide. Veuillez saisir un montant valide.");
+                console.error("Error converting to Wei :", error);
+                alert("Invalid amount. Please enter a valid amount.");
                 return;
             }
 
             const tokenAmount = Math.floor(bnbAmount / tokenPrice);
 
             try {
-                infoMessage.textContent = "Transaction en cours...";
+                infoMessage.textContent = "Transaction in progress...";
                 infoMessage.style.color = "green";
 
                 await tokenContract.methods.buyTokens(tokenAmount).send({
@@ -578,14 +565,14 @@ fetchTokenData();
                     value: valueInWei,
                 });
 
-                infoMessage.textContent = `Achat réussi ! Vous avez acheté ${tokenAmount} tokens.`;
+                infoMessage.textContent = `Successful purchase! You bought ${tokenAmount} tokens.`;
                 infoMessage.style.color = "green";
 
                 bnbInput.value = "";
                 calculatedTokens.textContent = "0.00";
             } catch (error) {
-                console.error("Erreur lors de l'achat :", error);
-                infoMessage.textContent = "Erreur lors de l'achat. Veuillez réessayer.";
+                console.error("Error during purchase :", error);
+                infoMessage.textContent = "Error during purchase. Please try again.";
                 infoMessage.style.color = "red";
             }
         }
