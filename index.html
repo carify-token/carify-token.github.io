@@ -137,12 +137,12 @@
         </div>
     
         <!-- Compteur de tokens -->
-    <div class="token-counter">
-        <p><strong>Tokens Sold:</strong></p>
-        <div>
-            <span id="soldTokens">0</span> / 3,750,000,000
+        <div class="token-counter">
+            <p><strong>Tokens Sold:</strong></p>
+            <div>
+                <span id="soldTokens">0</span> 
+            </div>
         </div>
-    </div>
 
     <!-- Wallet Section -->
     <div class="wallet-section">
@@ -301,23 +301,65 @@
 
     </script>
     <script>
-        const totalTokens = 3750000000; // Total tokens disponibles
-        let soldTokens = 0; // Initialisation à 0
-    
-        // Fonction pour mettre à jour le compteur
-        function updateTokenCounter(amountSold) {
-            soldTokens += amountSold;
-            const soldTokensElement = document.getElementById('soldTokens');
-            soldTokensElement.textContent = soldTokens.toLocaleString(); // Formatage avec des milliers
+        const totalTokens = 3750000000; // Total de tokens disponibles
+let soldTokens = 0; // Initialisation du compteur à 0
+
+// Fonction pour mettre à jour le compteur de tokens vendus
+function updateTokenCounter(amountSold) {
+    soldTokens += amountSold; // Ajoute le nombre de tokens achetés
+    const soldTokensElement = document.getElementById('soldTokens');
+    soldTokensElement.textContent = soldTokens.toLocaleString(); // Met à jour l'affichage avec un format lisible
+}
+
+// Gestion de l'achat de tokens
+document.getElementById('buyButton').addEventListener('click', async () => {
+    const bnbAmount = parseFloat(document.getElementById('bnbInput').value) || 0;
+    const tokenPrice = 0.000005; // Prix en BNB par token
+    const tokenAmount = Math.floor(bnbAmount / tokenPrice); // Calcul du nombre de tokens
+
+    if (bnbAmount > 0 && tokenAmount > 0) {
+        try {
+            updateTokenCounter(tokenAmount); // Met à jour le compteur après l'achat
+            document.getElementById('infoMessage').textContent = `Thank you! You purchased ${tokenAmount} tokens.`;
+        } catch (error) {
+            console.error("Erreur lors de la mise à jour du compteur :", error);
+            document.getElementById('infoMessage').textContent = "An error occurred during the purchase.";
         }
-    
-        // Simule une vente pour tester
-        document.getElementById('buyButton').addEventListener('click', () => {
-            const bnbAmount = parseFloat(document.getElementById('bnbInput').value) || 0;
-            const tokenAmount = bnbAmount / 0.000005; // Calcul basé sur le prix par token
-            updateTokenCounter(Math.floor(tokenAmount));
-            document.getElementById('infoMessage').textContent = `Thank you! You purchased ${Math.floor(tokenAmount)} tokens.`;
-        });
+    } else {
+        document.getElementById('infoMessage').textContent = "Please enter a valid BNB amount.";
+    }
+});
+    </script>
+    <script src="static/js/comb.js"></script>
+    <script>
+        async function fetchTokenData() {
+    const apiUrl = "https://api.bscscan.com/api?module=account&action=tokenbalance&contractaddress=0xf7c78ae754889471ca51bc8cc67ee50c01c49c89&address=0xf7c78ae754889471ca51bc8cc67ee50c01c49c89&tag=latest&apikey=TCIM2RPGJH6YVDGCY5JB7DIPGZTC5EUPDK";
+    const totalTokens = 3750000000; // Total des tokens disponibles
+
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        if (data.status === "1") {
+            const balanceInWei = BigInt(data.result); // Solde restant en wei
+            const balance = Number(balanceInWei) / 1e18; // Conversion en tokens
+            const soldTokens = totalTokens - balance; // Calcul des tokens vendus
+
+            // Mise à jour de l'élément HTML
+            document.getElementById("soldTokens").textContent = `${Math.floor(soldTokens).toLocaleString()} / ${totalTokens.toLocaleString()}`;
+        } else {
+            console.error("Erreur API BscScan :", data.message);
+            document.getElementById("soldTokens").textContent = "Error fetching data";
+        }
+    } catch (error) {
+        console.error("Erreur lors de la récupération des données :", error);
+        document.getElementById("soldTokens").textContent = "Error";
+    }
+}
+
+// Appel de la fonction pour récupérer les données au chargement de la page
+fetchTokenData();
+
     </script>
     
     <script>
@@ -592,6 +634,13 @@ function updateCountdown() {
 const countdownTimer = setInterval(updateCountdown, 1000);
 updateCountdown();
 
+    </script>
+    <script>
+        // Appel de la fonction fetchTokenData au chargement de la page
+        fetchTokenData();
+    
+        // Rafraîchir les données toutes les 30 secondes
+        setInterval(fetchTokenData, 30000);
     </script>
 </body>
 </html>
