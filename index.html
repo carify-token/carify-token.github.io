@@ -532,6 +532,18 @@ fetchTokenData();
             calculatedTokens.textContent = tokenAmount.toFixed(2);
         });
 
+        async function fetchTokenPrice() {
+    try {
+        const priceInWei = await tokenContract.methods.pricePerToken().call();
+        tokenPrice = web3.utils.fromWei(priceInWei, "ether");
+        console.log(`Token price successfully fetched: ${tokenPrice} BNB`);
+    } catch (error) {
+        console.error("Error fetching token price:", error);
+        alert("Unable to fetch token price. Please try again later.");
+    }
+}
+
+
         // Fonction pour acheter des tokens
         async function buyTokens() {
             if (!userAddress) {
